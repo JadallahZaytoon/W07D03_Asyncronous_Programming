@@ -92,8 +92,28 @@ const writeFile = () => {
   copyFile();
 
 
-
+  const post = JSON.stringify({
+    title: "JavaScript Basics",
+    body: "This post contains information about javaScript ",
+    // the id of the user who is going to create the post
+    userId: 1,
+  });
   
+  const createPost = (post) => {
+    axios.post('/user', {
+        firstName: 'Fred',
+        lastName: 'Flintstone'
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+};
+
+createPost();
 
 
   app.listen(PORT, () => {
