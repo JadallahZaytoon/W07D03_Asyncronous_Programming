@@ -50,20 +50,36 @@ const writeFile = () => {
 //   getPost(1);
 //   getPost(50);
 
-  const getPost = async(id) => {
-    await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
-    .then((response) => {
-        console.log(response.data);
-      })
+//   const getPost = async(id) => {
+//     await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+//     .then((response) => {
+//         console.log(response.data);
+//       })
 
-      .catch((err) => {
-        throw err;
-      })
-  };
+//       .catch((err) => {
+//         throw err;
+//       })
+//   };
   
-  getPost(1);
-  getPost(50);
+//   getPost(1);
+//   getPost(50);
 
+
+  const appendToFile = (data) => {
+    fs.appendFile(`./data.txt`,`
+    Passed data`,(err)=>{
+
+        if (err) {
+            console.log(err);
+          }
+    });
+    
+    
+
+  };
+
+  appendToFile()
+;
   app.listen(PORT, () => {
     console.log('SERVER IS WORKING ON http://localhost:' + PORT);
   });
