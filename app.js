@@ -78,8 +78,24 @@ const writeFile = () => {
 
   };
 
-  appendToFile()
-;
+  appendToFile();
+
+
+  const copyFile = (fileName) => {
+    try {
+    fs.promises.copyFile(`./data.txt`,`copy_of_data.txt`);
+  } catch {
+    console.log('The file could not be copied');
+  }
+
+  };
+  copyFile();
+
+
+
+  
+
+
   app.listen(PORT, () => {
     console.log('SERVER IS WORKING ON http://localhost:' + PORT);
   });
